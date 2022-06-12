@@ -23,7 +23,7 @@ def toCsv(inputPath: str, outputPath: str):
         outputPath = os.path.join(outputPath, outputFileName)
     if os.path.isfile(outputPath): raise FileExistsError()
     
-    with open(inputPath) as f:
+    with open(inputPath, encoding='ISO-8859-1') as f:
         lines = f.readlines()
 
     parsed = toDataFrame(lines)
